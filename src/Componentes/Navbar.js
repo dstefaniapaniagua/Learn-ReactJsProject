@@ -5,9 +5,10 @@ import '../Styles/navbar.css';
 import CartWidget from '../Componentes/CartWidget';
 
 
+
 const Navbar = () => {
     return (
-        <AppBar class="header" position="static" style={{ background: "grey"}}>
+        <AppBar class="header" position="static" style={{ background: "grey",}}>
             <Toolbar className="toolbar">
             <IconButton edge="start" color="inherit" aria-label="menu" style={{ marginLeft: 35}}>
                 <MenuIcon />
@@ -24,7 +25,7 @@ const Navbar = () => {
                 <Button id="login" style={{ marginLeft: 40,background: "black", color: "white"}}>Login</Button>
             </div>
             </Toolbar>
-        </AppBar>
+        </AppBar> 
     );
 };
 export default Navbar;
