@@ -1,23 +1,27 @@
 import React from 'react';
 import { AppBar, Toolbar, IconButton, Typography, Button} from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
+import '../Styles/navbar.css';
+import CartWidget from '../Componentes/CartWidget';
 
 
 const Navbar = () => {
     return (
-        <AppBar position="static" style={{ background: "grey"}}>
-            <Toolbar>
-            <IconButton edge="start" color="inherit" aria-label="menu">
+        <AppBar class="header" position="static" style={{ background: "grey"}}>
+            <Toolbar className="toolbar">
+            <IconButton edge="start" color="inherit" aria-label="menu" style={{ marginLeft: 35}}>
                 <MenuIcon />
             </IconButton>
-            <Typography variant="h6">
+            <Typography style={{ color: "white", variant: "h3", fontWeight: "bold"}}>
                 LEARN
             </Typography>
             <div style={{ marginLeft: "auto"}} >
-                <Button style={{ color: "white"}}>Authors</Button>
-                <Button style={{ color: "white"}}>E-books</Button>
-                <Button style={{ color: "white"}}>Articles</Button>
-                <Button style={{ background: "black", color: "white"}}>Login</Button>
+                <Button>Home</Button>
+                <Button>Authors</Button>
+                <Button>E-books</Button>
+                <Button>Articles</Button>
+                <CartWidget />
+                <Button id="login" style={{ marginLeft: 40,background: "black", color: "white"}}>Login</Button>
             </div>
             </Toolbar>
         </AppBar>

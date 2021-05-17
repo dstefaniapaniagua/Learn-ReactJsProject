@@ -1,0 +1,19 @@
+.header {
+  margin: auto;
+  background: darkgrey;
+}
+.toolbar {
+  height: 80px;
+  max-width: 95%;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+
+  align-items: center;
+}
+
+.toolbar button {
+  margin-right: 2.5em;
+  color: white;
+  font-size: 1em;
+}
