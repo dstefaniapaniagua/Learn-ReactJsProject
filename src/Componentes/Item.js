@@ -14,12 +14,9 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import IconButton from '@material-ui/core/IconButton';
 
-
-
-
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    maxWidth: 350,
     display: "inline-block",
     marginLeft: 160,
     marginTop: 50,
@@ -27,7 +24,7 @@ const useStyles = makeStyles({
 
   },
   media: {
-    height: 150,
+    height: 450,
     background: "black"
   },
   actions: {
@@ -35,7 +32,6 @@ const useStyles = makeStyles({
     marginLeft: 20
   }
 });
-
 
 
 function MediaCard ({id, title, description, img, price}) {

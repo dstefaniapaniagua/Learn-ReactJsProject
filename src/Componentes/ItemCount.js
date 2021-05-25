@@ -10,9 +10,8 @@ export default function ItemCounter({ stock, initial, onAdd }) {
     const increase = () => {
         if (contador < stock) {
           setContador((contador) => {
-            let cont = contador + 1;
-            onAdd(cont);
-            return cont;
+            setContador(contador +1 );
+            onAdd(contador);
           });
         }
       };

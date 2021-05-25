@@ -10,21 +10,21 @@ export default function ItemList () {
         title: "El psicoanálisis en debate", 
         description: "Una lectura sobre las problemáticas del psicoanálisis y de la salud mental." ,
         price: "$500", 
-        img:'./src/assets/uno'  */YA PROBE MUCHAS FORMAS DE ESCRIBIR LA RUTA PERO NO SE VE LA IMAGEN EN LA APP*/
+        img:'./assets/1.jpg'
     },
 
     {   id: 2,
         title: " Del síntoma al fantasma, Y retorno", 
         description: "Curso de 25 capítulos tuvo un antecedente que no puede pasar desapercibido. " ,
         price: "$800", 
-        img:"../../assets/dos.jpg"
+        img:"./assets/2.jpg"
     },
 
     {   id: 3,
         title: "Ser analista hoy", 
         description: "Permite reubicar el campo del psicoanálisis en el de las prácticas sociales de la actualidad." ,
         price: "$600", 
-        img: './assets/tres.jpg'
+        img: './assets/3.jpg'
     }
     ];
 
