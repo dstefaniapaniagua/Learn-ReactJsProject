@@ -18,17 +18,21 @@
 
 .ItemCounter .Contador input {
   width: 25%;
+  height: 41px;
+  border: 1px solid purple;
+  border-radius: 0.8em;
+  vertical-align: text-bottom;
   margin: 0 10px;
-  height: 30px;
+  text-align: center;
 }
 
-.AddCart button {
-  width: 16%;
-  display: block;
+.Contador button {
+  width: 18%;
   margin: auto;
-  margin-top: 1em;
-  padding: 0.5em;
+  margin-top: 0.8em;
+  padding: 0.4em;
   border: 1px solid purple;
-  border-radius: 0.5em;
-  font-size: 0.8em;
+  border-radius: 0.8em;
+  font-size: 0.7em;
+  vertical-align: text-bottom;
 }

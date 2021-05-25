@@ -30,13 +30,13 @@ export default function ItemCounter({ stock, initial, onAdd }) {
     return(
         <div className="ItemCounter">
             <div className="Contador">
-            <button onClick={substract}>
-                <RemoveIcon style={{ color: 'purple'}}/>
-            </button>
-            <input type="number" value={contador}/>
-            <button onClick={increase}>
-                <AddIcon style={{ color: 'purple'}}/>
-            </button>
+                <button onClick={substract}>
+                    <RemoveIcon style={{ color: 'purple'}}/>
+                </button>
+                <input type="number" value={contador}/>
+                <button onClick={increase}>
+                    <AddIcon style={{ color: 'purple'}}/>
+                </button>
         </div>
     </div>
     )
