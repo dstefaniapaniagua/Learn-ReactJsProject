@@ -1,18 +1,16 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
+import {CardActionArea, CardActions, CardContent, CardMedia} from "@material-ui/core"; 
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import CardMedia from '@material-ui/core/CardMedia';
 import ItemCount from "../Componentes/ItemCount";
 import {useState} from 'react'; 
 import '../Styles/itemCount.css';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import IconButton from '@material-ui/core/IconButton';
+
 
 const useStyles = makeStyles({
   root: {
@@ -25,7 +23,7 @@ const useStyles = makeStyles({
   },
   media: {
     height: 450,
-    background: "black"
+  
   },
   actions: {
     display: "block",
@@ -34,7 +32,7 @@ const useStyles = makeStyles({
 });
 
 
-function MediaCard ({id, title, description, img, price}) {
+function Item ({id, title, description, img, price}) {
 
   const[cantidad, setCantidad] = useState(1);
 
@@ -43,9 +41,9 @@ function MediaCard ({id, title, description, img, price}) {
   }
  const classes = useStyles();
   return (
+    <div className="item"> 
     <Card className={classes.root}>
-      <CardActionArea>
-  
+      <CardActionArea >
         <CardMedia
           className={classes.media}
           image={img}
@@ -76,16 +74,7 @@ function MediaCard ({id, title, description, img, price}) {
         </IconButton>
       </CardActions>
     </Card>
+    </div>
   );
-
-
-  /*return (
-     <>
-      <img src={img} alt={title}/>
-      <p>{descripcion}</p>
-      <p>{id}</p>
-      <p>{price}</p>
-    </>  
-  );   ESTO SERIA SIN MATERIAL UI */
 };
-export default MediaCard;
+export default Item;
