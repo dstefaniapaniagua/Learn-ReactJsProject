@@ -1,11 +1,14 @@
 import React from 'react'; 
 import ItemDetail from '../Componentes/ItemDetail';
 import { useState , useEffect} from "react";
+import { NavLink, useParams} from "react-router-dom";
 
 
 export default function ItemListContainer(){
 
     const [product, setProduct] = useState({});
+    const [loader, setLoader] = useState(false);
+    const { id } = useParams();
 
     useEffect(() => {
         const getItems = new Promise((resolve, reject) => {
@@ -49,14 +52,48 @@ export default function ItemListContainer(){
               // rechazo
             }
           );
-    }, [])
 
+        id
+          ? getItems.then(res => {
+              setProduct(res.filter(i => i.category === id));
+              setLoader(false);
+            })
+          : getItems.then(res => {
+              setProduct(res);
+              setLoader(false);
+            });   
+    }, [id])
+
+    const categories = [
+      { address: '/', text: 'TODOS LOS PRODUCTOS' },
+      { address: '/category/masvendidos', text: 'CATEGORIA MAS VENDIDOS' },
+      { address: '/category/psicoanalisis', text: 'CATEGORIA PSICOANALISIS' },
+    
+    ];
+  
     return (
+      <>
+        {categories.map(cat => {
+          return (
+            <div className="links">
+              <NavLink to={cat.address}>
+                <button className="categoria">{cat.text}</button>
+              </NavLink>
+            </div>
+          );
+        })}
+  
+        {loader && 'CARGANDO...'}
+        {!loader && product?.map(product => <ItemDetail key={product.id} />)}
+      </>
+    );
+
+    /*return (
         <div className="ItemDetailContainer">
         <h2 className="title" style={{textAlign: "center"}}>Item Detail Demo</h2>
         <ItemDetail item={product}/>
         </div>
-    );
+    );*/
 }
    
     

@@ -15,7 +15,6 @@ const NavBar = () => {
             <div style={{ marginLeft: "auto"}} >
                 <Button>Home</Button>
                 <Button>Más vendidos</Button>
-                <Button>E-books</Button>
                 <Button>Psicoanálisis</Button>
                 <CartWidget />
                 <Button id="login" style={{ marginLeft: 40,background: "black", color: "white"}}>Login</Button>
@@ -26,4 +25,4 @@ const NavBar = () => {
 };
 export default NavBar;
 
-// se agrega una class="categorias" en el div de la linea 14?
+// se agrega una class="categorias" en el div de la linea 14? o se agregan las categorias en ItemListContainer? 

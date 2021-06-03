@@ -1,66 +1,13 @@
 import React from 'react'; 
 import ItemList from '../Componentes/ItemList';
 import { useState, useEffect } from "react";
-import data from "../utils/dataProductos.json";
-import { Link, useParams} from "react-router-dom";
+import ItemDetail from '../Componentes/ItemDetail';
+
+import { NavLink, useParams} from "react-router-dom";
 
 
 export default function ItemListContainer() {
-
-  const { catId } = useParams();
-
-    const [books, setBooks] = useState([null]);
-    const [loading, setLoading] = useState(false); 
-    const  [category, setCategory] = useState(true);
-
-    useEffect(() => {
-      const getBooks = new Promise(resolve => {
-        setLoading(true);
-        setTimeout(() => {
-          resolve(data);
-        }, 1000);
-      });
-  
-      catId
-        ? getBooks.then( res => {
-            setBooks(data.filter((item) => item.category === catId));
-            setLoading(false);
-            setCategory(true);
-          })
-        : getBooks.then(res => {
-            setBooks(data);
-            setLoading(false);
-          });
-    }, [catId, category]);
-
-  
-    return (
-      <div className="links">
-      { catId && catId !== "todos" ? (
-        <>
-          Encontrá los mejores productos de {catId}
-        </>
-      ) : (
-          "Encontra los Mejores Productos"
-      )}
-
-      {category ? (
-      <ItemList books={books}   loading={loading} />
-      ) : (
-      <p>
-      La categoría que buscas no existe
-      <br />
-      <Link to={`/`}>Ver Todos los Productos</Link>
-      </p>
-    )}
-     </div>
-
-  );
-};
-
-
-// codigo de antes de armar el data en jason 
-/*const [book, setBook] = useState([null]);
+  const [book, setBook] = useState([null]);
     const books = [
       {
         id: 1,
@@ -95,14 +42,18 @@ export default function ItemListContainer() {
         id: 4,
         title: "Los cambios que cambian",
         description:"Sobre la voz en el aula",
-        price: $680,
+        price: "$680",
         img: "./assets/2.jpg",
         category: "mas vendidos"
     }
     ];
+
+    const [loading, setLoading] = useState(false);
+    //const {id} = useParams ();
   
     const promise = new Promise((resolve, reject) => {
       setTimeout(function () {
+        setLoading(true);
         resolve(books);
       }, 2000);
     });
@@ -115,20 +66,63 @@ export default function ItemListContainer() {
         // rechazo
       }
     );
-  
+
+    //¿ Se integran las categorias acá? ¿Como? si hago lo siguiente no me funciona el map
+      /* 
+        id
+        ? getItems.then(resolve => {
+            setBook(resolve.filter(i => i.category === id));
+            setLoader(false);
+          })
+        : getItems.then(resolve => {
+            setBook(resolve);
+            setLoader(false);
+          });   
+          }, [id])
+
+          /*const categories = [
+            { address: '/', text: 'TODOS LOS PRODUCTOS' },
+            { address: '/category/masvendidos', text: 'MAS VENDIDOS' },
+            { address: '/category/psicoanalisis', text: 'PSICOANALISIS' },
+          
+          ];
+
+          return (
+            <>
+              {categories.map(cat => {
+                return (
+                  <div className="links">
+                    <NavLink to={cat.address}>
+                      <button className="categoria">{cat.text}</button>
+                    </NavLink>
+                  </div>
+                );
+              })}
+              
+
+              {loader && 'CARGANDO...'}
+              {!loader && categories?.map(product => <ItemList key={product.id} />)}
+            </>
+          );
+      */
+
     return (
-        <div>
-          {books?.map((book) => {
-              return (
-                  <ItemList
-                  title={book.title} 
-                  img={book.img} 
-                  description={book.description} 
-                  price={book.price}>
-                         {books.title}
-                  </ItemList>
-              );
-          })}
-        </div>
-    );
-*/ 
+      <div>
+        {books?.map((book) => {
+            return (
+                <ItemList
+                title={book.title} 
+                img={book.img} 
+                description={book.description} 
+                price={book.price}
+                loading={loading}
+                >
+                       {books.title}
+                </ItemList>
+            );
+        })}
+      </div>
+  );
+
+};
+
