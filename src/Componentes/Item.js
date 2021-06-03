@@ -40,6 +40,7 @@ function Item ({id, title, description, img, price}) {
       setCantidad(cantidad);
   }
  const classes = useStyles();
+ 
   return (
     <div className="item"> 
     <Card className={classes.root}>
