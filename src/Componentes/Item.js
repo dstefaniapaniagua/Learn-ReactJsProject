@@ -10,6 +10,7 @@ import '../Styles/itemCount.css';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import IconButton from '@material-ui/core/IconButton';
+import '../Styles/item.css';
 
 
 const useStyles = makeStyles({
@@ -42,7 +43,7 @@ function Item ({id, title, description, img, price}) {
  const classes = useStyles();
  
   return (
-    <div className="item"> 
+    <div className="card"> 
     <Card className={classes.root}>
       <CardActionArea >
         <CardMedia
