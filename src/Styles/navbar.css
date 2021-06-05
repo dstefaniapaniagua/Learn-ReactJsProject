@@ -14,3 +14,11 @@
   color: white;
   font-size: 1em;
 }
+
+.links-nav {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+}
