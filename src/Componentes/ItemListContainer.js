@@ -6,7 +6,7 @@ import data from '../utils/dataProductos.json';
 
 
 const ItemListContainer = (props) => {
-  const [product, setProduct] = useState([null]);
+  const [product, setProduct] = useState([]);
   const {id} = useParams ();
   const [loading, setLoading] = useState(false);
     
@@ -74,12 +74,12 @@ const ItemListContainer = (props) => {
 
     return (
       <div className="itemListDiv">
-            {id ? `${id}` : "Bienvenidx blabla"}
-            {loading ?' Cargando' : <ItemList />}
-    
+        {id ? `${id}` : "Bienvenidx blabla"}
+        {loading
+          ? " Cargando"
+          : product.map((pro, i) => <ItemList img={pro.img} price={pro.price} title={pro.title} />)}
       </div>
-      
-  );
+    );
 
 };
 
