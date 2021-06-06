@@ -1,14 +1,17 @@
 import React from 'react'; 
 import ItemList from '../Componentes/ItemList';
 import { useState, useEffect } from "react";
-import ItemDetail from '../Componentes/ItemDetail';
+import { useParams} from "react-router-dom";
+import data from '../utils/dataProductos.json'; 
 
-import { NavLink, useParams} from "react-router-dom";
 
+const ItemListContainer = (props) => {
+  const [product, setProduct] = useState([null]);
+  const {id} = useParams ();
+  const [loading, setLoading] = useState(false);
+    
 
-export default function ItemListContainer() {
-  const [book, setBook] = useState([null]);
-    const books = [
+   /* const myProducts = [
       {
         id: 1,
         title: "El psicoanálisis en debate",
@@ -36,7 +39,7 @@ export default function ItemListContainer() {
           "Permite reubicar el campo del psicoanálisis en el de las prácticas sociales de la actualidad.",
         price: "$600",
         img: "./assets/3.jpg",
-        category: "mas vendidos"
+        category: "masvendidos"
       },
       {
         id: 4,
@@ -44,85 +47,40 @@ export default function ItemListContainer() {
         description:"Sobre la voz en el aula",
         price: "$680",
         img: "./assets/2.jpg",
-        category: "mas vendidos"
+        category: "masvendidos"
     }
-    ];
+    ]; */
 
-    const [loading, setLoading] = useState(false);
-    //const {id} = useParams ();
   
-    const promise = new Promise((resolve, reject) => {
-      setTimeout(function () {
+    useEffect(()=>{
+      const promise = new Promise((resolve, reject) => {
         setLoading(true);
-        resolve(books);
-      }, 2000);
-    });
-  
-    promise.then(
-      function (value) {
-        setBook(value);
-      },
-      function (reason) {
-        // rechazo
-      }
-    );
+        setTimeout(() => {
+           resolve(data);
+        }, 2000);
+      });
 
-    //¿ Se integran las categorias acá? ¿Como? si hago lo siguiente no me funciona el map
-      /* 
-        id
-        ? getItems.then(resolve => {
-            setBook(resolve.filter(i => i.category === id));
-            setLoader(false);
-          })
-        : getItems.then(resolve => {
-            setBook(resolve);
-            setLoader(false);
-          });   
-          }, [id])
-
-          /*const categories = [
-            { address: '/', text: 'TODOS LOS PRODUCTOS' },
-            { address: '/category/masvendidos', text: 'MAS VENDIDOS' },
-            { address: '/category/psicoanalisis', text: 'PSICOANALISIS' },
-          
-          ];
-
-          return (
-            <>
-              {categories.map(cat => {
-                return (
-                  <div className="links">
-                    <NavLink to={cat.address}>
-                      <button className="categoria">{cat.text}</button>
-                    </NavLink>
-                  </div>
-                );
-              })}
-              
-
-              {loader && 'CARGANDO...'}
-              {!loader && categories?.map(product => <ItemList key={product.id} />)}
-            </>
-          );
-      */
+      id
+      ? promise.then(res => {
+          setProduct(res.filter(i => i.category === id));
+          setLoading(false);
+        })
+      : promise.then(res => {
+          setProduct(res);
+          setLoading(false);
+        });
+    }, [id]);
+   
 
     return (
-      <div>
-        {books?.map((book) => {
-            return (
-                <ItemList
-                title={book.title} 
-                img={book.img} 
-                description={book.description} 
-                price={book.price}
-                loading={loading}
-                >
-                       {books.title}
-                </ItemList>
-            );
-        })}
+      <div className="itemListDiv">
+            {id ? `${id}` : "Bienvenidx blabla"}
+            {loading ?' Cargando' : <ItemList />}
+    
       </div>
+      
   );
 
 };
 
+export default ItemListContainer;

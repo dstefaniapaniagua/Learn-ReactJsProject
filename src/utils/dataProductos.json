@@ -6,7 +6,7 @@
         "Una lectura sobre las problemáticas del psicoanálisis y de la salud mental.",
       "price": "$500",
       "img": "./assets/1.jpg",
-      "category": "mas vendidos"
+      "category": "masvendidos"
     },
 
     {
@@ -35,6 +35,6 @@
         "description":"Sobre la voz en el aula",
         "price": "$680",
         "img": "./assets/2.jpg",
-        "category": "mas vendidos"
+        "category": "ebooks"
     }
   ]

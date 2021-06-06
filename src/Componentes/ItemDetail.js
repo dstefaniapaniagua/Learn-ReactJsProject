@@ -5,7 +5,7 @@ import '../Styles/itemDetail.css';
 
 
 
-export default function ItemDetail ({item}) {
+function ItemDetail ({item}) {
 
   const[cantidad, setCantidad] = useState(1);
 
@@ -32,4 +32,6 @@ export default function ItemDetail ({item}) {
     )
 
 };
+
+export default ItemDetail;
 

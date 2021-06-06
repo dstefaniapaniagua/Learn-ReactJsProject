@@ -12,7 +12,6 @@ import ShareIcon from '@material-ui/icons/Share';
 import IconButton from '@material-ui/core/IconButton';
 import '../Styles/item.css';
 
-
 const useStyles = makeStyles({
   root: {
     maxWidth: 350,
@@ -32,15 +31,14 @@ const useStyles = makeStyles({
   }
 });
 
-
-function Item ({id, title, description, img, price}) {
+const Item = ({id, title, img, price, description}) => {
+  const classes = useStyles();
 
   const[cantidad, setCantidad] = useState(1);
 
   const handleCantidad = (cantidad) => {
       setCantidad(cantidad);
   }
- const classes = useStyles();
  
   return (
     <div className="card"> 
@@ -52,15 +50,9 @@ function Item ({id, title, description, img, price}) {
           title={title}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-           {title}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-          {description}
-          </Typography>
-          <Typography>
-          {price}
-          </Typography>
+        <span className="title">{title}</span>
+        <span className="price">{price}</span>
+        <span className="description"> {description}</span>
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.actions} style={{ marginLeft: 40, marginBottom: 30}} >
@@ -76,7 +68,15 @@ function Item ({id, title, description, img, price}) {
         </IconButton>
       </CardActions>
     </Card>
-    </div>
-  );
+    </div> 
+   /*<> 
+      <span className="title">{item.title}</span>
+      <span className="price">{item.price}</span>
+      <span className="description"> {item.description}</span>
+      <IconButton color="purple" style={{ marginLeft: 50, marginTop: 30}}  aria-label="add to favorites">
+          <FavoriteIcon />
+      </IconButton>
+    </> */
+  ); 
 };
 export default Item;

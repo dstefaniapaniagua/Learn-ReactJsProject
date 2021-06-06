@@ -3,13 +3,13 @@ import './App.css';
 import { BrowserRouter , Switch, Route} from 'react-router-dom';
 import ItemListContainer from './Componentes/ItemListContainer';
 import ItemDetailContainer from './Componentes/ItemDetailContainer';
-import NavBar from './Componentes/NavBar';
+import Navbar from './Componentes/Navbar';
 
 
 function App() {
   return (
     <BrowserRouter>
-      <NavBar/>
+      <Navbar />
       <Switch>
         <Route exact path="/">
           <ItemListContainer/>
