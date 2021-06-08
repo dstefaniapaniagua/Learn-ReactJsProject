@@ -32,9 +32,9 @@
     {
         "id": "4",
         "title": "Los cambios que cambian",
-        "description":"Sobre la voz en el aula",
+        "description":"Sobre la voz en el aula en tiempos actuales",
         "price": "$680",
         "img": "./assets/2.jpg",
-        "category": "ebooks"
+        "category": "masvendidos"
     }
   ]

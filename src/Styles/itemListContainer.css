@@ -1,0 +1,10 @@
+.itemListDiv .progress {
+  margin-top: 8em;
+  margin-left: 32em;
+}
+
+.itemListDiv {
+  font-size: 1.2em;
+  margin-top: 3em;
+  color: #808080;
+}

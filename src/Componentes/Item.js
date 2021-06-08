@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     display: "inline-block",
     marginLeft: 160,
     marginTop: 50,
-    marginBottom: 80
+    marginBottom: 20
 
   },
   media: {
@@ -41,7 +41,7 @@ const Item = ({id, title, img, price, description}) => {
   }
  
   return (
-    <div className="card"> 
+    <div className="cont-card"> 
     <Card className={classes.root}>
       <CardActionArea >
         <CardMedia
@@ -50,9 +50,15 @@ const Item = ({id, title, img, price, description}) => {
           title={title}
         />
         <CardContent>
-        <span className="title">{title}</span>
-        <span className="price">{price}</span>
-        <span className="description"> {description}</span>
+        <Typography gutterBottom variant="h5" component="h2">
+            {title}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+           {description}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p" style={{fontSize:22, color: "purple"}}>
+            {price}
+          </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.actions} style={{ marginLeft: 40, marginBottom: 30}} >
@@ -69,14 +75,7 @@ const Item = ({id, title, img, price, description}) => {
       </CardActions>
     </Card>
     </div> 
-   /*<> 
-      <span className="title">{item.title}</span>
-      <span className="price">{item.price}</span>
-      <span className="description"> {item.description}</span>
-      <IconButton color="purple" style={{ marginLeft: 50, marginTop: 30}}  aria-label="add to favorites">
-          <FavoriteIcon />
-      </IconButton>
-    </> */
+  
   ); 
 };
 export default Item;

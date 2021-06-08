@@ -9,8 +9,8 @@ import { NavLink, Link} from 'react-router-dom';
 const NavBar = () => {
 
     return (
-        <AppBar className="header" position="static" style={{ background: "grey",}}>
-            <Toolbar className="toolbar">
+        <AppBar className="header" position="static" style={{ background: "grey", display:"inline-block"}}>
+            <Toolbar className="toolbar"> 
             <Link to="/" className='links-nav' style={{ variant: "h1", fontWeight: "bold", marginLeft: 130}}>
                 LEARN
             </Link> 
@@ -24,8 +24,3 @@ const NavBar = () => {
     );
 };
 export default NavBar;
-
-/* <NavLink to="'/" className='links-nav' style={{ marginLeft: 40}}>Home</NavLink>
-                <NavLink to="/category/masvendidos" className='links-nav'  style={{ marginLeft: 50}}>Más vendidos</NavLink>
-                <NavLink to="/category/psicoanalisis" className='links-nav'  style={{ marginLeft: 50, marginRight: 40}}>Psicoanálisis</NavLink>*/
-                

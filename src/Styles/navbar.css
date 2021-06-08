@@ -1,13 +1,18 @@
 .header {
   margin: auto;
+  display: flex;
 }
 .toolbar {
-  height: 80px;
+  height: 90px;
   max-width: 95%;
-  display: flex;
-  justify-content: space-between;
+  display: inline-block;
+  justify-content: space-around;
   flex-flow: row nowrap;
   align-items: center;
+}
+
+.toolbar div {
+  display: flex;
 }
 .toolbar button {
   margin-right: 2.5em;

@@ -3,55 +3,27 @@ import ItemList from '../Componentes/ItemList';
 import { useState, useEffect } from "react";
 import { useParams} from "react-router-dom";
 import data from '../utils/dataProductos.json'; 
+import { makeStyles } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import '../Styles/itemListContainer.css';
 
+
+
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    '& > * + *': {
+      marginLeft: theme.spacing(2),
+    },
+  },
+}));
 
 const ItemListContainer = (props) => {
   const [product, setProduct] = useState([]);
   const {id} = useParams ();
   const [loading, setLoading] = useState(false);
     
-
-   /* const myProducts = [
-      {
-        id: 1,
-        title: "El psicoanálisis en debate",
-        description:
-          "Una lectura sobre las problemáticas del psicoanálisis y de la salud mental.",
-        price: "$500",
-        img: "./assets/1.jpg",
-        category: "psicoanalisis"
-      },
-  
-      {
-        id: 2,
-        title: " Del síntoma al fantasma, Y retorno",
-        description:
-          "Curso de 25 capítulos tuvo un antecedente que no puede pasar desapercibido. ",
-        price: "$800",
-        img: "./assets/2.jpg",
-        category: "psicoanalisis"
-      },
-      
-      {
-        id: 3,
-        title: "Ser analista hoy",
-        description:
-          "Permite reubicar el campo del psicoanálisis en el de las prácticas sociales de la actualidad.",
-        price: "$600",
-        img: "./assets/3.jpg",
-        category: "masvendidos"
-      },
-      {
-        id: 4,
-        title: "Los cambios que cambian",
-        description:"Sobre la voz en el aula",
-        price: "$680",
-        img: "./assets/2.jpg",
-        category: "masvendidos"
-    }
-    ]; */
-
-  
     useEffect(()=>{
       const promise = new Promise((resolve, reject) => {
         setLoading(true);
@@ -73,14 +45,13 @@ const ItemListContainer = (props) => {
    
 
     return (
-      <div className="itemListDiv">
-        {id ? `${id}` : "Bienvenidx blabla"}
+      <div className="itemListDiv" >
+     {id ? <span style={{display:"none"}}>`${id}`</span> : <h2 style={{textAlign:"center"}}>¡Bienvenidxs a Learn!</h2>}
         {loading
-          ? " Cargando"
-          : product.map((pro, i) => <ItemList img={pro.img} price={pro.price} title={pro.title} />)}
+          ? <div className="progress"> <CircularProgress /> </div> 
+          : product.map((pro, i) => <ItemList img={pro.img} price={pro.price} title={pro.title} description={pro.description}/>)}
       </div>
     );
-
 };
 
 export default ItemListContainer;

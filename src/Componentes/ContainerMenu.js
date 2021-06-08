@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {NavLink} from 'react-router-dom';
+import '../Styles/containerMenu.css';
+
+
 
 const ContainerMenu = () => {
   
@@ -10,42 +13,22 @@ const ContainerMenu = () => {
       ];
 
       return (
-        <>
+        <div className="container">
           {categories.map(categories => {
             return (
               <div className="links">
-                <NavLink to={categories.address}>
-                  <button className="categoria">{categories.text}</button>
+                <NavLink to={categories.address} className="iNav" >
+                  <button className="categoria" 
+                    style={{color:"white", background:"none", border:"none", fontStyle:"bold", paddingTop: 10}}>
+                      {categories.text}
+                  </button>
                 </NavLink>
               </div>
             );
           })}
-        </>
+        </div>
       );
-  
-  
-         /* {loader && 'CARGANDO...'}
-          {!loader && categories?.map(product => <ItemList key={product.id} />)}*/ 
-  
-    /* const [categories]=useState(["MAS VENDIDOS", "PSICOANALISIS", "EBOOKS"])
-    return (
-
-        <Container>
-
-        {categories?.map((x) => {
-            return (
-               <Categories />
-            );
-        })}
-        </Container>
-    )*/
 }; 
 
-/*const Container = styled.div`
-    position:relative;
-    div{
-    display:flex;
-    flex-direction:column;
-    } */
 
 export default ContainerMenu; 
