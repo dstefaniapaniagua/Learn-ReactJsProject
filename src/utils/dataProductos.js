@@ -13,40 +13,49 @@ const data = [
   {
     id: "1",
     title: "El psicoanálisis en debate",
-    description:
-      "Una lectura sobre las problemáticas del psicoanálisis y de la salud mental.",
+    description: "Sobre el psicoanálisis y la salud mental.",
+    largeDescription:
+      "Una lectura sobre las problemáticas del psicoanálisis y de la salud mental en los tiempos actuales.",
     price: "$500",
     img: masvendidosimagen1,
     category: "masvendidos",
+    stock: 8,
   },
 
   {
     id: "2",
     title: " Del síntoma al fantasma, Y retorno",
-    description:
-      "Curso de 25 capítulos tuvo un antecedente que no puede pasar desapercibido. ",
+    description: "Sobre el fantasma y el retono en el sintoma",
+    largeDescription:
+      "Curso de 25 capítulos tuvo un antecedente que no puede pasar desapercibido por su gran aporte al tratar sobre tematicas como el sintome y el fantasma",
     price: "$800",
     img: psicoanalisisimg2,
     category: "psicoanalisis",
+    stock: 8,
   },
 
   {
     id: "3",
     title: "Ser analista hoy",
-    description:
-      "Sobre el psicoanálisis en las prácticas sociales de la actualidad.",
+    description: "Sobre el psicoanálisis en actualidad.",
+    largeDescription:
+      "Sobre el psicoanálisis en las practicas sociales en actualidad.",
     price: "$600",
     img: psicoanalisisimg3,
     category: "psicoanalisis",
+    stock: 8,
   },
 
   {
     id: "4",
     title: "Los cambios que cambian",
     description: "Sobre la voz en el aula en tiempos actuales",
+    largeDescription:
+      "Sobre la voz en el aula en los tiempos actuales de grandes cambios",
     price: "$680",
     img: masvendidosimagen4,
     category: "masvendidos",
+    stock: 4,
   },
 
   {
@@ -56,24 +65,25 @@ const data = [
     price: "$790",
     img: psicoanalisisimg5,
     category: "psicoanalisis",
+    stock: 6,
   },
   {
     id: "6",
     title: "Nasio, ¡Sí, el psicoanalisis cura",
-
     description: "Este libro explica sobre la importancia del psiconalisis",
     price: "$920.99",
     img: psicoanalisisimg6,
     category: "psicoanalisis",
+    stock: 8,
   },
   {
     id: "7",
     title: "Nasio, ¡Sí, el psicoanalisis cura",
-
     description: "Este libro explica sobre la importancia del psiconalisis",
     price: "$850",
     img: psicoanalisisimg7,
     category: "psicoanalisis",
+    stock: 3,
   },
   {
     id: "8",
@@ -82,6 +92,7 @@ const data = [
     price: "$850",
     img: masvendidosimagen8,
     category: "masvendidos",
+    stock: 8,
   },
   {
     id: "9",
@@ -89,6 +100,7 @@ const data = [
     description: "Una novela que trata sobre las contradicciones del amor",
     img: masvendidosimagen9,
     category: "masvendidos",
+    stock: 6,
   },
 
   {
@@ -97,6 +109,7 @@ const data = [
     description: "Un escrito que retoma las grandes historias de Emerson",
     img: masvendidosimagen10,
     category: "masvendidos",
+    stock: 3,
   },
 ];
 
