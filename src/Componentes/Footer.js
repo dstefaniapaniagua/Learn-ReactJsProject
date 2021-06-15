@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="copyright">
         <p>&copy; 2021 </p>
       </div>
-      <p>Página en proceso de construcción</p>
+      <p>Sitio en proceso de construcción</p>
     </div>
   );
 }

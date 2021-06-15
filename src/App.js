@@ -6,7 +6,7 @@ import ItemDetailContainer from "./Componentes/ItemDetailContainer";
 import Navbar from "./Componentes/Navbar";
 import Footer from "./Componentes/Footer";
 import Error404 from "./Componentes/Error404";
-import CartProvider from "./Componentes/Contexts/CartContext";
+import { CartProvider } from "./Componentes/Contexts/CartContext";
 
 function App() {
   return (

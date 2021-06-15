@@ -3,18 +3,8 @@ import ItemList from "../Componentes/ItemList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import data from "../utils/dataProductos";
-import { makeStyles } from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import "../Styles/itemListContainer.css";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    "& > * + *": {
-      marginLeft: theme.spacing(2),
-    },
-  },
-}));
 
 const ItemListContainer = (props) => {
   const [product, setProduct] = useState([]);
@@ -58,7 +48,6 @@ const ItemListContainer = (props) => {
             key={pro.title}
             img={pro.img}
             price={pro.price}
-            key={pro.title}
             title={pro.title}
             description={pro.description}
           />

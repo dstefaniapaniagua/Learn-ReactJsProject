@@ -62,6 +62,8 @@ const data = [
     id: "5",
     title: "Gabriel Rolon, Historias de Divan",
     description: "Algo así como diferentes historias",
+    largeDescription:
+      "Sobre la voz en el aula en los tiempos actuales de grandes cambios",
     price: "$790",
     img: psicoanalisisimg5,
     category: "psicoanalisis",
@@ -71,6 +73,8 @@ const data = [
     id: "6",
     title: "Nasio, ¡Sí, el psicoanalisis cura",
     description: "Este libro explica sobre la importancia del psiconalisis",
+    largeDescription:
+      "Sobre la voz en el aula en los tiempos actuales de grandes cambios",
     price: "$920.99",
     img: psicoanalisisimg6,
     category: "psicoanalisis",
@@ -80,6 +84,8 @@ const data = [
     id: "7",
     title: "Nasio, ¡Sí, el psicoanalisis cura",
     description: "Este libro explica sobre la importancia del psiconalisis",
+    largeDescription:
+      "Sobre la voz en el aula en los tiempos actuales de grandes cambios",
     price: "$850",
     img: psicoanalisisimg7,
     category: "psicoanalisis",
@@ -89,6 +95,8 @@ const data = [
     id: "8",
     title: "Vicente Muleiro, La niña de sus ojos",
     description: "Una novela muy famosa que habla de...",
+    largeDescription:
+      "Sobre la voz en el aula en los tiempos actuales de grandes cambios",
     price: "$850",
     img: masvendidosimagen8,
     category: "masvendidos",
@@ -98,6 +106,8 @@ const data = [
     id: "9",
     title: "Pedro Lemebel, La esquina de mi corazón",
     description: "Una novela que trata sobre las contradicciones del amor",
+    largeDescription:
+      "Sobre la voz en el aula en los tiempos actuales de grandes cambios",
     img: masvendidosimagen9,
     category: "masvendidos",
     stock: 6,
@@ -107,6 +117,8 @@ const data = [
     id: "10",
     title: "Luis Landero, El huerto de Emerson",
     description: "Un escrito que retoma las grandes historias de Emerson",
+    largeDescription:
+      "Sobre la voz en el aula en los tiempos actuales de grandes cambios",
     img: masvendidosimagen10,
     category: "masvendidos",
     stock: 3,
