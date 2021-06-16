@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
-import { Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ItemListContainer from "./Componentes/ItemListContainer";
 import ItemDetailContainer from "./Componentes/ItemDetailContainer";
 import Navbar from "./Componentes/Navbar";
 import Footer from "./Componentes/Footer";
 import Error404 from "./Componentes/Error404";
-import { CartProvider } from "./Componentes/Contexts/CartContext";
+import CartProvider from "./Componentes/Contexts/CartContext";
 import Cart from "./Componentes/BuyButtons/Cart";
 
 function App() {

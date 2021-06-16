@@ -99,3 +99,5 @@ const Item = ({ id, title, img, price, description, largeDescription }) => {
   );
 };
 export default Item;
+
+//pregunta: para que el boton comprar refleje la cantidad, que deberia hacer?
