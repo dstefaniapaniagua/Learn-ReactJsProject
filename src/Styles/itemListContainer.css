@@ -1,10 +1,25 @@
 .itemListDiv .progress {
   margin-top: 8em;
-  margin-left: 32em;
+  margin-left: 15em;
 }
 
 .itemListDiv {
+  max-width:75%;
   font-size: 1.2em;
   margin-top: 3em;
+  margin: auto;
+  display:-webkit-inline-flex; 
+  flex-wrap: wrap;
+  justify-content:space-around;
+  margin-left: 180px;
+}
+
+.itemListDiv h2 {
+  width:max-content;
+  width: 100%;
   color: #808080;
+  display: block;
+ text-align: center;
+ margin-bottom: 3em;
+ font-size: 2em;
 }

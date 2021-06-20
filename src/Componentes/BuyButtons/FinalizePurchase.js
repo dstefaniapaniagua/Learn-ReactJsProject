@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function FinalizePurchase(handle) {
+const FinalizePurchase = ({ handle }) => {
   return (
     <div>
       <Link to="/cart">
@@ -9,4 +9,5 @@ export default function FinalizePurchase(handle) {
       </Link>
     </div>
   );
-}
+};
+export default FinalizePurchase;

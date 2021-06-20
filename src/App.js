@@ -7,7 +7,7 @@ import Navbar from "./Componentes/Navbar";
 import Footer from "./Componentes/Footer";
 import Error404 from "./Componentes/Error404";
 import CartProvider from "./Componentes/Contexts/CartContext";
-import Cart from "./Componentes/BuyButtons/Cart";
+import Cart from "./Componentes/Cart/Cart";
 
 function App() {
   return (
@@ -21,13 +21,16 @@ function App() {
           <Route exact path="/category/:id">
             <ItemListContainer />
           </Route>
-          <Route exact path="/item/:id">
+          <Route exact path="/product">
             <ItemDetailContainer />
           </Route>
-          <Route exact path="">
+          <Route exact path="/product/:productId">
+            <ItemDetailContainer />
+          </Route>
+          <Route exact path="/">
             <Error404 />
           </Route>
-          <Route exact path="">
+          <Route exact path="/cart">
             <Cart />
           </Route>
         </Switch>

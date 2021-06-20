@@ -1,20 +1,28 @@
 import React from "react";
 
-export default function AddToCart({ handle }) {
+const AddToCart = ({ handle }) => {
   return (
     <div>
       <button
-        onClick={handle}
         style={{
           background: "purple",
           color: "white",
           width: 200,
           marginTop: 30,
-          padding: 5,
         }}
+        onClick={handle}
       >
         Agregar al carrito
       </button>
     </div>
   );
-}
+};
+export default AddToCart;
+
+/*style={{
+          background: "purple",
+          color: "white",
+          width: 200,
+          marginTop: 30,
+          padding: 5,
+        }}*/

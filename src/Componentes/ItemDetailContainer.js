@@ -7,7 +7,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 
 const ItemListContainer = (props) => {
   const [product, setProduct] = useState([]);
-  const { id } = useParams();
+  const { productId } = useParams();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -18,39 +18,40 @@ const ItemListContainer = (props) => {
       }, 2000);
     });
 
-    id
+    /* promise
+      .then((res) => {
+        const items = res.docs.map((item) => item.data());
+        console.log(items);
+        setProduct(items.filter((item) => item.id === productId));
+      })
+      .then(() => setLoading(true));*/
+    productId
       ? promise.then((res) => {
-          setProduct(res.filter((i) => i.category === id));
+          setProduct(res.filter((i) => i.id === productId));
           setLoading(false);
         })
       : promise.then((res) => {
           setProduct(res);
           setLoading(false);
         });
-  }, [id]);
+  }, [productId]);
 
   return (
-    <div className="itemListDiv">
-      {id ? (
-        <span style={{ display: "none" }}>`${id}`</span>
-      ) : (
-        <h2 style={{ textAlign: "center" }}>¡Bienvenidxs a Learn!</h2>
-      )}
+    <div className="itemDetailContainer">
       {loading ? (
         <div className="progress">
           {" "}
           <CircularProgress />{" "}
         </div>
       ) : (
-        product.map((pro, i) => (
+        product?.map((pro) => (
           <ItemDetail
             key={pro.title}
+            id={pro.id}
             img={pro.img}
             price={pro.price}
             title={pro.title}
-            description={pro.description}
             largeDescription={pro.largeDescription}
-            category={pro.category}
           />
         ))
       )}

@@ -4,7 +4,7 @@ import AddIcon from "@material-ui/icons/AddCircle";
 import RemoveIcon from "@material-ui/icons/RemoveCircle";
 import "../Styles/itemCount.css";
 import AddToCart from "../Componentes/BuyButtons/AddToCart";
-//import { useCart } from "../Componentes/Contexts/CartContext";
+import { useCart } from "../Componentes/Contexts/CartContext";
 
 let stock = 5;
 
@@ -49,7 +49,7 @@ const ChangeStock = () => {
 
 export default function ItemCounter({ handle }) {
   const { monto, increaseItem, substractItem, contador } = ChangeStock();
-  //const cart = useCart();
+  const cart = useCart();
 
   return (
     <div className="ItemCounter">

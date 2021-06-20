@@ -27,3 +27,8 @@
   font-weight: bold;
   font-size: 1em;
 }
+
+.links-nav:hover {
+  color: rgb(29, 165, 158);
+  cursor: pointer;
+}

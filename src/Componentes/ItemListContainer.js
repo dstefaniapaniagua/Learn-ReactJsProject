@@ -46,6 +46,7 @@ const ItemListContainer = (props) => {
         product.map((pro, i) => (
           <ItemList
             key={pro.title}
+            id={pro.id}
             img={pro.img}
             price={pro.price}
             title={pro.title}

@@ -1,4 +1,59 @@
-.cont-card {
-  display: inline-flex;
-  margin-left: 500px;
+.itemContainer {
+  margin-bottom: 30px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:space-around; 
+  max-width: 350px;
+  margin:auto;
+  border: 3px solid gray;
+  border-radius: 6px;
+  margin-bottom: 2em;
+ 
 }
+
+.itemContainer .item span {
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.item  .title {
+  font-weight: bold;
+}
+
+.item .price {
+  font-weight: bold;
+  color:purple; 
+}
+.item img {
+  width: 350px;
+  height: 450px;
+}
+
+.item .verProd{
+  cursor: pointer;
+  margin-left: 10px;
+  background-color: rebeccapurple;
+  color: white;
+  display: block;
+  margin:auto;
+  margin-top: 15px;
+}
+
+.item .verProd:hover {
+  color: #fff;
+  background-color: rgb(29, 165, 158);
+  transition: all .4s ease;
+}
+
+.ItemList {
+  margin: auto;
+  width: 100%;
+  display: contents;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+

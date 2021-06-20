@@ -5,7 +5,7 @@ export const CartContext = createContext();
 export const useCart = () => useContext(CartContext);
 
 const initialState = {
-  addedItems: [{ name: "Libro", price: 800, quantity: 0 }],
+  addedItems: [{ name: "Libro", price: 900, quantity: 0 }],
   totalPrice: 0,
 };
 
@@ -69,5 +69,3 @@ export default function CartProvider({ children }) {
     </>
   );
 }
-
-//Pregunta: en initialState, en addItems tendría que agregar más items?

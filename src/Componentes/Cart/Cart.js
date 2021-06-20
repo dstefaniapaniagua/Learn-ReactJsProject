@@ -5,12 +5,9 @@ const Cart = () => {
   const cart = useCart();
   return (
     <div>
-      <h1>Carrito de compras</h1>
-      <button onClick={cart.clearCart}>Limpiar Carrito</button>
+      <h1>Sección Carrito de Compras</h1>
     </div>
   );
 };
 
 export default Cart;
-
-// donde agrego el routing? '/cart'

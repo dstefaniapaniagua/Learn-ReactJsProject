@@ -3,57 +3,64 @@ import ItemCount from "../Componentes/ItemCount";
 import "../Styles/itemCount.css";
 import "../Styles/itemDetail.css";
 import FinalizePurchase from "../Componentes/BuyButtons/FinalizePurchase";
+import { useCart } from "../Componentes/Contexts/CartContext";
+import { Link } from "react-router-dom";
 
-function ItemDetail({ item }) {
+function ItemDetail({ id, title, price, largeDescription, img }) {
   const [cantidad, setCantidad] = useState(1);
-
+  const [isPurchase, setIsPurchase] = useState(false);
+  const cart = useCart();
   const handleCantidad = (cantidad) => {
     setCantidad(cantidad);
   };
 
-  const [cart, setCart] = useState(false);
-  const handleClick = () => {
-    setCart(true);
+  const addNewProduct = () => {
+    setIsPurchase(true);
+    cart.addItem({
+      id: id,
+      title: title,
+      price: price,
+      quantity: cantidad,
+    });
+  };
+
+  const handlePurchase = () => {
+    console.log("Handling purchase");
   };
 
   return (
     <div className="ItemDetail">
-      <div className="ItemsDetails">
-        <img src={item.img} alt={item.title} />
-        <h2>{item.title}</h2>
-        <p>{item.description}</p>
-        <p className="precio">{item.price}</p>
-        {cart ? (
-          <FinalizePurchase />
+      <div className="ItemsDetail">
+        <img src={img} alt={title} />
+        <h2>{title}</h2>
+        <p>{largeDescription}</p>
+        <p className="precio">{price}</p>
+        {isPurchase ? (
+          <Link to="/cart" style={{ textDecoration: "none", color: "inherit" }}>
+            <FinalizePurchase fn={handlePurchase} />
+          </Link>
         ) : (
-          <div className="contador" style={{ marginLeft: 50, marginTop: 20 }}>
-            <ItemCount
-              stock={5}
-              initial={1}
-              onAdd={handleCantidad}
-              handle={handleClick}
-            />
-          </div>
+          <ItemCount
+            stock={5}
+            initial={1}
+            onAdd={handleCantidad}
+            handle={addNewProduct}
+          />
         )}
-        <button
-          size="big"
-          color="primary"
-          style={{
-            marginLeft: 650,
-            background: "purple",
-            color: "white",
-            width: 200,
-            marginTop: 10,
-            padding: 15,
-            borderRadius: 6,
-            fontSize: 19,
-          }}
-        >
-          Comprar ({cantidad})
-        </button>
       </div>
     </div>
   );
 }
 
 export default ItemDetail;
+
+//codigo anterior:
+/*const addNewProduct = (itemData, cantidad) => {
+    setIsPurchase(true);
+    const details = {
+      itemName: itemData[0].title,
+      price: itemData[0].price,
+      quantity: cantidad,
+    };
+    cart.addItem(details);
+  };*/
